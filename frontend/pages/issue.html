@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Issue Books | Library</title>
+    <link rel="stylesheet" href="..//assets/css/issue.css" />
+  </head>
+  <body>
+    <h1>Issue Books</h1>
+
+    <div class="container">
+      <!-- issue form -->
+      <div class="issue-form">
+        <h2>Issue Details</h2>
+
+        <input type="number" id="userId" placeholder="Enter User ID" />
+        <input type="number" id="bookId" placeholder="Enter Book ID" />
+        <input type="date" id="issueDate " placeholder="Enter date" />
+        <button type="button" onclick="issueBook()">Issue</button>
+      </div>
+
+      <!-- available book -->
+       <div id="issueMsg"></div>
+      <div class="books" id="bookList">
+        
+      </div>
+
+      <div id="issuelist" class="books">
+        
+      </div>
+    </div>
+
+    <script src="../assets/js/pages/issue.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #0f172a;
+      color: #fff;
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Search by ID */
+    .search-id {
+      display: flex;
+      gap: 10px;
+      max-width: 500px;
+      margin: 0 auto 30px;
+    }
+
+    .search-id input {
+      flex: 1;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .search-id button {
+      padding: 12px 18px;
+      border: none;
+      border-radius: 8px;
+      background: #22c55e;
+      color: #000;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .search-id button:hover {
+      background: #16a34a;
+    }
+
+    /* Book List */
+    .book-list {
+      max-width: 900px;
+      margin: auto;
+      background: #111827;
+      padding: 20px;
+      border-radius: 12px;
+      height: 500px;
+      overflow-y: auto;
+    }
+
+    .book-card {
+      background: #1f2933;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .book-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .book-card p {
+      margin: 4px 0;
+      font-size: 14px;
+      color: #cbd5e1;
+    }
+
+    /* Scrollbar */
+    .book-list::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .book-list::-webkit-scrollbar-thumb {
+      background: #475569;
+      border-radius: 10px;
+    }

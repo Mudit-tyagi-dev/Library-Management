@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Books | Library</title>
+
+ <link rel="stylesheet" href="../assets/css/book.css">
+</head>
+<body>
+
+  <h1> All Books</h1>
+  <!-- Search Book by ID -->
+  <div class="search-id">
+    <input type="number" id="bookId" placeholder="Enter Book ID" />
+    <button onclick="getBookById()">Search</button>
+    <button onclick="loadBooks()">Reset</button>
+  </div>
+
+  <!-- Book List -->
+  <div class="book-list" id="bookList">
+
+  <tbody id="bookList"></tbody>
+  </div>
+<script src="../assets/js/pages/book.js">
+</script>
+
+</body>
+</html>

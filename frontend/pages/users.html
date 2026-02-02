@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Users | Library</title>
+  <link rel="stylesheet" href="../assets/css/user.css">
+</head>
+<!-- Delete Confirmation Modal -->
+<div class="modal" id="deleteModal">
+  <div class="modal-content">
+    <h3>Remove User</h3>
+    <p>Are you sure you want to remove this user?</p>
+
+    <div class="modal-actions">
+      <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+      <button class="confirm-btn" onclick="confirmDelete()">Yes, Remove</button>
+    </div>
+  </div>
+</div>
+
+<body>
+
+<h1>👤 User Management</h1>
+
+<div class="container">
+
+  <!-- left -->
+  <div>
+
+    <!-- add -->
+    <div class="card">
+      <h2>Add New User</h2>
+      <input type="text" id="name" placeholder="User Name">
+      <input type="email" id="email" placeholder="Email">
+      <button class="add-btn" onclick="addUser()">Add User</button>
+    </div>
+
+    <!-- by id -->
+    <div class="card">
+      <h2>Get User by ID</h2>
+      <input type="number" id="searchId" placeholder="Enter User ID">
+      <button class="search-btn" onclick="getUserById()">Search</button>
+      <button class="search-btn1" onclick="getuserdata()">Reset</button>
+    </div>
+
+  </div>
+
+  <!-- right -->
+  <div class="user-list" id="userList">
+  </div>
+
+</div>
+
+<script src="../assets/js/pages/user.js"></script>
+
+
+</body>
+</html>
