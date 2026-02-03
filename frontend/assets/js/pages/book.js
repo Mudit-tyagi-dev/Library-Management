@@ -1,18 +1,20 @@
 const bookList = document.getElementById("bookList");
 
 async function loadBooks() {
-  const res = await fetch("https://library-management-4tz5.onrender.com");
-  const result = await res.json();
+  const res = await fetch("https://library-management-4tz5.onrender.com/books");
 
-  // console.log(result);
+  const data = await res.json();
+  const books = data.books;
 
-  const books = result.books; 
+  if (!Array.isArray(books)) {
+    console.error("Expected array, got:", books);
+    return;
+  }
 
-  books.forEach(book => {
+  books.forEach((book) => {
     const tr = document.createElement("tr");
 
     tr.innerHTML = `
-      
       <td>${book.title}</td>
       <td>${book.author}</td>
       <td>${book.publish_year}</td>
@@ -26,20 +28,22 @@ loadBooks();
 
 async function getBookById() {
   const id = document.getElementById("bookId").value;
+  if (!id) return;
 
-  const res = await fetch(`https://library-management-4tz5.onrender.com/books/${id}`);
+  const res = await fetch(
+    `https://library-management-4tz5.onrender.com/books/${id}`,
+  );
   const result = await res.json();
 
+  const book = Array.isArray(result) ? result[0] : result;
+
+  if (!book) {
+    console.error("Book not found:");
+    return;
+  }
 
   const bookList = document.getElementById("bookList");
   bookList.innerHTML = "";
-
-  const book = result[0];
-
-  if (!book) {
-    bookList.innerHTML = `<tr><td colspan="3">Book not found</td></tr>`;
-    return;
-  }
 
   const tr = document.createElement("tr");
   tr.innerHTML = `
@@ -50,4 +54,3 @@ async function getBookById() {
 
   bookList.appendChild(tr);
 }
-getBookById()
