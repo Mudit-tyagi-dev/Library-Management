@@ -1,7 +1,7 @@
 const bookList = document.getElementById("bookList");
 
 async function loadBooks() {
-  const res = await fetch("http://localhost:5000/books");
+  const res = await fetch("https://library-management-4tz5.onrender.com");
   const result = await res.json();
 
   // console.log(result);
@@ -27,7 +27,7 @@ loadBooks();
 async function getBookById() {
   const id = document.getElementById("bookId").value;
 
-  const res = await fetch(`http://localhost:5000/books/${id}`);
+  const res = await fetch(`https://library-management-4tz5.onrender.com/books/${id}`);
   const result = await res.json();
 
 

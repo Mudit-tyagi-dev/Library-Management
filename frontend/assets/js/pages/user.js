@@ -1,5 +1,5 @@
 async function getuserdata() {
-  const res = await fetch("http://localhost:5000/users");
+  const res = await fetch("https://library-management-4tz5.onrender.com");
   const result = await res.json();
   const users = result.users;
   // console.log(result);
@@ -29,7 +29,7 @@ async function addUser() {
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
 
-  await fetch("http://localhost:5000/users", {
+  await fetch("https://library-management-4tz5.onrender.com/users", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ name, email }),
@@ -68,7 +68,7 @@ async function getUserById() {
 
   userList.innerHTML = "";
 
-  const res = await fetch(`http://localhost:5000/users/${id}`);
+  const res = await fetch(`https://library-management-4tz5.onrender.com/users/${id}`);
   const result = await res.json();
 
   const user = result[0]; // single object

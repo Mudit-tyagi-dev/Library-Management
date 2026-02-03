@@ -1,7 +1,7 @@
 // alert("issue.js loaded");
 
 async function fetchBooks() {
-  const res = await fetch("http://localhost:5000/books");
+  const res = await fetch("https://library-management-4tz5.onrender.com/books");
   const result = await res.json();
   const bookList = document.getElementById("bookList");
   const books = result.books;
@@ -30,7 +30,7 @@ async function issueBook() {
 
   msgBox.innerHTML = ""; // clear old message
 
-  const res = await fetch("http://localhost:5000/issuedbooks", {
+  const res = await fetch("https://library-management-4tz5.onrender.com/issue", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ userId, bookId }),
@@ -68,7 +68,7 @@ async function issueBook() {
 // }
 // getIssuedBooks();
 async function getIssuedBooks() {
-  const res = await fetch("http://localhost:5000/issuedbooks");
+  const res = await fetch("https://library-management-4tz5.onrender.com");
   const data = await res.json();
 
   const issuelist = document.getElementById("issuelist");
